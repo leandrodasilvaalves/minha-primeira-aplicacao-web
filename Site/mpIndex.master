@@ -1,0 +1,195 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mpIndex.master.cs" Inherits="mpIndex" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Lista Bem - Lista Eletrônica</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="imagetoolbar" content="no" />	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script>
+	    !window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+	</script>
+	<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+ 	<link rel="stylesheet" href="style.css" />
+	<script type="text/javascript">
+	    $(document).ready(function () {
+	        /*
+	        *   Examples - images
+	        */
+
+	        $("a#example1").fancybox();
+
+	        $("a#example2").fancybox({
+	            'overlayShow': false,
+	            'transitionIn': 'elastic',
+	            'transitionOut': 'elastic'
+	        });
+
+	        $("a#example3").fancybox({
+	            'transitionIn': 'none',
+	            'transitionOut': 'none'
+	        });
+
+	        $("a#example4").fancybox({
+	            'opacity': true,
+	            'overlayShow': false,
+	            'transitionIn': 'elastic',
+	            'transitionOut': 'none'
+	        });
+
+	        $("a#example5").fancybox();
+
+	        $("a#example6").fancybox({
+	            'titlePosition': 'outside',
+	            'overlayColor': '#000',
+	            'overlayOpacity': 0.9
+	        });
+
+	        $("a#example7").fancybox({
+	            'titlePosition': 'inside'
+	        });
+
+	        $("a#example8").fancybox({
+	            'titlePosition': 'over'
+	        });
+
+	        $("a[rel=example_group]").fancybox({
+	            'transitionIn': 'none',
+	            'transitionOut': 'none',
+	            'titlePosition': 'over',
+	            'titleFormat': function (title, currentArray, currentIndex, currentOpts) {
+	                return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+	            }
+	        });
+
+	        /*
+	        *   Examples - various
+	        */
+
+	        $("#various1").fancybox({
+	            'titlePosition': 'inside',
+	            'transitionIn': 'none',
+	            'transitionOut': 'none'
+	        });
+
+	        $("#various2").fancybox();
+
+	        $("#various3").fancybox({
+	            'width': '75%',
+	            'height': '75%',
+	            'autoScale': false,
+	            'transitionIn': 'none',
+	            'transitionOut': 'none',
+	            'type': 'iframe'
+	        });
+
+	        $("#various4").fancybox({
+	            'padding': 0,
+	            'autoScale': false,
+	            'transitionIn': 'none',
+	            'transitionOut': 'none'
+	        });
+	    });
+	</script>
+      
+    <style type="text/css">
+       
+        #Menu1 a:link
+        {
+            margin: 5px 12px 5px 12px;
+            text-decoration: none;
+            color: #BBBBBB;
+            font-family: arial;
+            font-weight: bold;
+            font-size: 13px;
+            
+        }
+        
+        #Menu1 a:visited
+        {
+            margin: 5px 12px 5px 12px;
+            text-decoration: none;
+            color: #BBBBBB;
+            font-family: arial;
+            font-weight: bold;
+            font-size: 13px;
+           
+        }
+        #Menu1 a:active
+        {
+            margin: 5px 12px 5px 12px;
+            text-decoration: none;
+            color: #BBBBBB;
+            font-family: arial;
+            font-weight: bold;
+            font-size: 13px;
+            
+        }
+        #Menu1 a:hover
+        {
+            margin: 5px 12px 5px 12px;
+            text-decoration: none;
+            color: White;
+            font-family: arial;
+            font-weight: bold;
+            font-size: 13px;
+            
+        }
+       
+        .form
+        {
+            height: 100%;
+            width: 100%;
+        }
+        
+        
+        .logo
+        {
+          border-style:none;          
+        }
+        body
+        {
+            width:100%;
+            height:700px;
+            font-family: Arial;
+        }  
+        .menu
+        {
+            position:absolute;
+            top:0px;
+        }   
+       
+    </style>
+   
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <div id="divFundoMenu" style=" width:100%; height:30px; background-color:#26265C;">        
+         <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="menu" >
+             <Items>
+                 <asp:MenuItem Target="_blank" Text="Cinemas" Value="Cinemas" NavigateUrl="http://www.luzianiaonline.com.br/cinema"></asp:MenuItem>
+                 <asp:MenuItem Target="_blank" Text="Sine Emprego" Value="Sine Emprego" NavigateUrl="http://www.luzianiaonline.com.br/sineempregodeluziania/"></asp:MenuItem>
+                 <asp:MenuItem Target="_blank" Text="E-mail" Value="E-mail" NavigateUrl="http://www.luzianiaonline.com.br/email/"></asp:MenuItem>
+                 <asp:MenuItem Target="_blank" Text="Sistema Host" Value="Sistema Host" NavigateUrl="http://painel.luzianiaonline.com/"></asp:MenuItem>
+                 <asp:MenuItem Text="Contato" Value="Contato" NavigateUrl="contato.aspx"></asp:MenuItem>
+             </Items>
+         </asp:Menu>
+        
+         <!--Faixa Laranja -->
+        <div style="background-color:#CD3301; height:3px; width:100%; position:absolute; top:27px;"></div>       
+     </div>
+        
+        
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </form>
+   
+</body>
+</html>
